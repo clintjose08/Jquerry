@@ -1,0 +1,204 @@
+/*	Stackroute
+	Wipro Digital
+	Clint
+*/
+
+/* =====================================
+		layout
+	======================================
+*/
+/*
+#inputName{
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+#inputmessage{
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+#send{
+	background-color: #f95f14;
+	border-color: #222222;
+}
+#cancelbtn{
+	border-color: #f95f14;
+}*/
+/* =====================================
+		Typography
+	======================================
+*/
+.col-sm-6{
+	padding-left: 0;
+}
+li{
+	list-style: none;
+}
+ul{
+	padding: 5px;
+}
+
+
+/* =====================================
+		NavBar
+	======================================
+*/
+.navbar-inverse{
+	border-color: #f95f14;
+}
+.navbar-brand{
+	padding: 15px;
+}
+#SearchBox{
+	padding-top: 5px;
+}
+#SearchInPut{
+	height: 30px;
+}
+.usricn{
+	padding-right: 4px;
+	color: #f95f14;
+}
+/* =====================================
+		Carousel
+	======================================
+*/
+
+/*====================================
+		footer
+======================================
+*/
+#footerimg{
+	margin: 0;
+	border:0;
+	width: 100%;
+}
+.box{
+	margin: 0;
+	text-align: left;
+	width: 33%;
+	
+}
+.followus{
+	color: #545353;
+	padding-top:15px;
+	text-align: center;
+	margin: 0;
+	width:33%;
+}
+.followus li:hover{
+	text-decoration: underline;
+}
+#footer{
+	background: #222222;
+	border-bottom: 0;
+	border-left: 0;
+	border-right: 0;
+	margin: 0;
+}
+.fa-facebook-square{
+	color: #ea6525;
+}
+.fa-twitter-square{
+	color: #ea6525;
+}
+.fa-google-plus-square{
+	color: #ea6525;
+}
+.fa-facebook-square:hover{
+	color: #4463a6;
+}
+.fa-twitter-square:hover{
+	color: #1ba4f8;
+}
+.fa-google-plus-square:hover{
+	color: #e44336;
+}
+#footerleft li{
+	list-style: none;
+	color:#ea6525;
+}
+#footerleft li a{
+	color:#ea6525;
+}
+.smallalign1{
+	 padding-right:0px;
+}
+.smallalign2{
+	padding-right:0px; 
+	padding-top:5px;"
+}
+
+@media(min-width: 1200px){
+	#myCarousel .item{
+		height: 380px;}
+	#slide1{
+		height: 380px;
+		background: url(../img/carousal-1.jpg ) top center no-repeat;
+	}
+	#slide2{
+		background: url(../img/carousal-2.jpg) top center no-repeat;
+	}
+	#slide3{
+		background: url(../img/carousal-3.jpg) top center no-repeat;
+	}
+}
+@media(max-width: 768px){
+	#myCarousel .item{
+		height: 296px;
+	}
+	#myCarousel{
+		padding-top: 52px;
+	}
+	#slide1{
+		background: url(../img/carousal-1-small.jpg) top center no-repeat;
+	}
+	#slide2{
+		background: url(../img/carousal-2-small.jpg) top center no-repeat;
+	}
+	#slide3{
+		background: url(../img/carousal-3-small.jpg) top center no-repeat;
+	}
+	.carousel-caption h4{
+		font-size: 22px;
+	}
+	.carousel-caption{
+		font-size: 16px;
+	}
+	.smallalign1{
+		padding: 10px;
+	}
+	.smallalign2{
+		padding: 10px;
+	}
+}
+
+@media (max-width: 480px){
+
+	.navbar-button{
+		padding: 0px;
+		margin: 0px;
+		border: 0px;
+	}
+	.dropdown-menu li{
+		padding-left: 20px;
+	}
+	.abc{
+		text-align: center;
+	}
+	.smallalign1{
+		padding: 10px;
+	}
+	.smallalign2{
+		padding: 10px;
+	}
+	.followus{
+	color: #545353;
+	padding-top:15px;
+	text-align: center;
+	margin: 0;
+	width:100%;
+	}
+	#footerleft{
+		padding-left: 0px;
+	}
+}

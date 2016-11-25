@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>Excercise 2 Botstrap</title>
+</head>
+
+
+<body>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<button class="navbar-toggle" data-target=".navbar-responsive-collapse" data-toggle="collapse" type="button" style="margin-right:0;">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<div class="navbar-collapse collapse navbar-responsive-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active">
+						<a href="#"><span class="usricn"><span class="glyphicon glyphicon-home"></span></span>Home</a>
+
+					</li>
+					<li>
+						<a href="#">About</a>
+					</li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Pages<span class="caret"></span></a>
+					</li>
+					<li>
+						<a href="#modalcontact" data-toggle="modal">Contact</a>
+					</li>
+				</ul>
+				<form class="navbar-form pull-left" id="SearchBox" role="search" style="margin-bottom:5px;">
+					<input type="text" class="form-control" id="SearchInPut" placeholder="Search Movie here...">
+					<button type="Submit" class="btn btn-default" id="movie" style="height:30px;" ><span class="glyphicon glyphicon-search"></span></button>
+				</form>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" style="padding-left: 31px;"><span class="usricn"><span class="glyphicon glyphicon-user"></span></span> Account<span class="caret"></span></a>	
+					</li><!-- end of dropdown for Account 	-->
+				</ul> 
+			</div>
+		</div><!-- container inside navbar -->
+	</div>	<!-- End of Nav bar -->
+	<div class="container">
+		<div class="row printHtml" id="moreInfo" style="margin-top:150px;">
+		</div>
+	</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("button").click(function(){
+		var title=$("#SearchInPut").val();
+		//console.log();
+		$.ajax({
+
+			type:"GET",
+			url: "http://www.omdbapi.com/?s="+title,
+			error: function(){
+				$(movieList).html('<p>error</p>');
+			},
+			success: function(data){
+				//console.log(data);
+				$(".printHtml").empty();
+				var dataSearch = data.Search;
+				var dLength = data.totalResults;	
+				for (var i=0; i<data.totalResults;i++){
+				//$(".printHtml").append(dataSearch[i].Title),
+				if(dataSearch[i].Poster=="N/A")
+					$(".printHtml").append("<div class="+"col-sm-4"+"><ul><li>No Image Available</li><li><h4 Title:></h4>"+dataSearch[i].Title+"</li><li>"+dataSearch[i].Year+"</li><li>"+dataSearch[i].imdbID+"</li></ul></div>");
+				else{
+					$(".printHtml").append("<div class="+"col-sm-4"+"><ul><li><img src ="+dataSearch[i].Poster+" "+"style="+"width:230px;height:auto;"+"></li><li><h4 Title:></h4>"+dataSearch[i].Title+"</li><li>"+dataSearch[i].Year+"</li><li>"+dataSearch[i].imdbID+"</li></ul></div>");
+				}
+				//console.log(dataSearch[i].Title);
+				}
+				}
+			//xhttp.send();
+		});
+	});
+});
+
+</script>
+</body>
+</html>
